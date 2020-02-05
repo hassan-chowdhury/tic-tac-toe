@@ -43,7 +43,6 @@ const Game = () => {
     };
 
     const renderMoves = () => {
-        
         return history.map((_, move) => {
             const destination = move ? `Go to move #${move}` : "Go to game start";
             return (

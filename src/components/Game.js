@@ -31,13 +31,10 @@ const Game = () => {
     };
 
     const status = () => {
-        let s;
         if (winner) {
-            s = `Winner: ${winner}`;
-        } else {
-            s = `Next player: ${xIsNext ? "X" : "O"}`;
+            return `Winner: ${winner}`;
         }
-        return s;
+        return `Next player: ${xIsNext ? "X" : "O"}`;
     };
 
     const jumpTo = step => {

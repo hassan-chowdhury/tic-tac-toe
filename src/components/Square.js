@@ -9,10 +9,18 @@ const style = {
     outline: 'none'
 };
 
-const Square = ({ value, onClick }) => (
-    <button style={style} onClick={onClick}>
-        {value}
-    </button>
-);
+const emphasis = {
+    ...style,
+    color: 'red'
+};
+
+const Square = ({ value, isWinLocation, onClick }) => {
+    const chooseStyle = isWinLocation ? emphasis : style;
+    return (
+        <button style={chooseStyle} onClick={onClick}>
+            {value}
+        </button>
+    )
+};
 
 export default Square;

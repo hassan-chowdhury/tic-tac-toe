@@ -11,7 +11,7 @@ const Game = () => {
     const [history, setHistory] = useState([Array(9).fill(null)]);
     const [stepNumber, setStepNumber] = useState(0);
     const [xIsNext, setXIsNext] = useState(true);
-    const winner = calculateWinner(history[stepNumber]);
+    const {winner, winLocations} = calculateWinner(history[stepNumber]);
 
     const handleClick = i => {
         const historyToCurrentStep = history.slice(0, stepNumber + 1);
@@ -61,6 +61,7 @@ const Game = () => {
         <>
             <Board 
                 squares={history[stepNumber]}
+                winLocations={winLocations}
                 onClick={handleClick}
             />
             <div style={style}>

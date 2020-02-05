@@ -11,12 +11,13 @@ const style = {
     gridTemplate: 'repeat(3, 1fr) / repeat(3, 1fr)'
 };
 
-const Board = ({ squares, onClick }) => (
+const Board = ({ squares, winLocations, onClick }) => (
     <div style={style}>
         {squares.map((square, i) => (
             <Square 
                 key={i} // TODO key should not be index
                 value={square}
+                isWinLocation={winLocations.includes(i)}
                 onClick={() => onClick(i)}
             />
         ))}
